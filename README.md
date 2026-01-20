@@ -16,7 +16,7 @@ Add WhopCheckout to your project via SPM:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/whopio/whopsdk-checkout-swift.git", from: "0.1.0")
+    .package(url: "https://github.com/whopio/whopsdk-checkout-swift.git", from: "0.2.0")
 ]
 ```
 
@@ -38,7 +38,7 @@ struct MyApp: App {
             try await Checkout.shared.configure(
                 companyId: "biz_xxx",
                 apiKey: "your-api-key",
-                plans: [
+                planMappings: [
                     .init(whopId: "plan_xxx", appleId: "weekly_subscription"),
                     .init(whopId: "plan_yyy", appleId: "monthly_subscription"),
                 ]
@@ -54,6 +54,8 @@ struct MyApp: App {
     }
 }
 ```
+
+> **Note:** Pass an empty array `[]` for `planMappings` if you don't need StoreKit fallback. Plan mappings are only required if you want to support StoreKit purchases.
 
 ### 2. Check Subscription Status
 
