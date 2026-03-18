@@ -1,10 +1,10 @@
-// swift-tools-version:5.10
+// swift-tools-version: 6.0
 import PackageDescription
 
 let package = Package(
     name: "WhopCheckout",
     platforms: [
-        .iOS(.v17),
+        .iOS(.v18),
     ],
     products: [
         .library(
@@ -26,8 +26,9 @@ let package = Package(
         ),
         .binaryTarget(
             name: "CheckoutFramework",
-            url: "https://github.com/whopio/whopsdk-checkout-swift/releases/download/0.2.0/WhopCheckout.xcframework.zip",
-            checksum: "645469899d8bd960f592629d0877f4e3bb2bdb9c9605fad10cdcded61ddcb11e"
+            url: "https://github.com/whopio/whopsdk-checkout-swift/releases/download/0.3.0/WhopCheckout.xcframework.zip",
+            checksum: "cecf467151c976b1a969cfef134811563193826f994a36fcec9e3f7911b38f3a"
         ),
-    ]
+    ],
+    swiftLanguageModes: [.v5]
 )

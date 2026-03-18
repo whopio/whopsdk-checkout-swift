@@ -4,7 +4,7 @@ A lightweight iOS SDK for integrating Whop subscriptions with Apple In-App Purch
 
 ## Requirements
 
-- iOS 17.0+
+- iOS 18.0+
 - Swift 5.10+
 - Xcode 15.0+
 
@@ -16,7 +16,7 @@ Add WhopCheckout to your project via SPM:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/whopio/whopsdk-checkout-swift.git", from: "0.2.0")
+    .package(url: "https://github.com/whopio/whopsdk-checkout-swift.git", from: "0.1.0")
 ]
 ```
 
@@ -123,7 +123,22 @@ You can override this behavior:
 try await Checkout.shared.purchase("plan_xxx", method: .whop)
 
 // Force Apple StoreKit
-try await Checkout.shared.purchase("plan_xxx", method: .apple)
+try await Checkout.shared.purchase("plan_xxx", method: .storeKit)
+```
+
+### Apple Pay (service-based apps only)
+
+For apps selling physical goods or real-world services, use the pre-built Apple Pay button:
+
+```swift
+Checkout.ApplePayButton(planId: "plan_xxx", label: .subscribe) { result in
+    switch result {
+    case .success(let purchase):
+        print("Receipt: \(purchase.receiptId)")
+    case .failure(let error):
+        print("Error: \(error)")
+    }
+}
 ```
 
 ## User Management
