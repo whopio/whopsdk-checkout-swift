@@ -13,7 +13,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/apollographql/apollo-ios.git", exact: "2.0.5"),
+        .package(url: "https://github.com/apollographql/apollo-ios.git", exact: "2.1.1"),
     ],
     targets: [
         .target(
@@ -26,8 +26,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "CheckoutFramework",
-            url: "https://github.com/whopio/whopsdk-checkout-swift/releases/download/0.3.0/WhopCheckout.xcframework.zip",
-            checksum: "cecf467151c976b1a969cfef134811563193826f994a36fcec9e3f7911b38f3a"
+            url: "https://github.com/whopio/whopsdk-checkout-swift/releases/download/0.4.0/WhopCheckout.xcframework.zip",
+            checksum: "a7a25a15d4a498fee232f20409e37f8e3a6ece8db5fe7c6c325116a6fd083574"
         ),
     ],
     swiftLanguageModes: [.v5]
