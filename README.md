@@ -16,7 +16,7 @@ Add WhopCheckout to your project via SPM:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/whopio/whopsdk-checkout-swift.git", from: "0.1.0")
+    .package(url: "https://github.com/whopio/whopsdk-checkout-swift.git", from: "0.4.1")
 ]
 ```
 
